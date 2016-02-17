@@ -6,6 +6,22 @@ def run(n,pi):
     print x
     return x
 
+def compare(n, pi1, pi2):
+    x1 = generate_data_tree(n,pi1)
+    x2 = generate_data_tree(n,pi2)
+    y1 = analyze_tree(x1)
+    y2 = analyze_tree(x2)
+    z1 = sorted(y1, key = lambda k: y1[k])
+    z2 = sorted(y2, key = lambda k: y2[k])
+    print "---"
+    for i in range(len(z1)):
+        print str(z1[i]) + " = " + str(z2[i])
+
+
+    print "---"
+    
+    return (z1, z2)
+
 def analyze_tree(data):
     allDegrees = {}
     for i in data:
